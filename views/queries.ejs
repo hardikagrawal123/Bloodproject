@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <link rel = "stylesheet" href="style.css">
+  <title> My Form </title>
+</head>
+
+<body>
+    <script src = "index.js"></script>
+
+  <style>
+    /* Basic CSS for navbar */
+    .navbar {
+        background-color: #f8f9fa;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #333;
+        text-align: right;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+    }
+
+    .navbar-heading {
+        font-size: 24px;
+        margin: 0;
+        padding: 14px 20px;
+        float: left;
+    }
+</style>
+
+  <header>
+    <h1>Blood Bank Database</h1>
+  </header>
+<div class="navbar">
+<h1 class="navbar-heading" style="color: #4CAF50;">BloodBank</h1>
+<a href="/" style="text-align: right;">Home</a>
+<a href="/queries"  style="text-align: right;">Queries</a>
+</div>
+
+<form action="/emp" method="post">
+<h2>
+   <%=locals.error1 ?error1: "Enter Employee id"%>
+</h2>
+<br>
+<input type="number" name="emp_detail">
+<button type="submit">Submit</button>
+
+
+<div>
+    <h3>
+        No of Person:
+        <span>
+            <%= locals.number?number:"-"%>
+        </span>
+    </h3>
+    <h3>
+        Name of Emp:
+        <span>
+            <%=locals.name ?name:"-"%>
+        </span>
+    </h3>
+</div>
+</form>
+
+</form><form action="/disease" method="post">
+    <h2>
+        <%= locals.error ? error : "Enter Name of Disease:" %>
+    </h2>
+    <br>
+    <input type="text" name="person">
+    <button type="submit">Submit</button>
+
+    <div>
+        <% if (locals.rows) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>RBC</th>
+                        <th>WBC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% rows.forEach(row => { %>
+                        <tr>
+                            <td><%= row.fname %></td>
+                            <td><%= row.rbc %></td>
+                            <td><%= row.wbc %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+</form>
+<form action="/donor" method="post">
+    <h2>
+     <%=locals.error2?error2:   "Find a Donor🩸"%>
+    </h2>
+    <label>Enter city:</label>
+    <input type="text " name="city">
+    <br><br>
+    <label>Enter Blood Group:</label>
+    <input type="text" name="BG">
+    <button type="submit">Find me a donor</button>
+    <div>
+        <% if (locals.rows) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        
+                        <th>Quanity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% rows.forEach(row => { %>
+                        <tr>
+                            <td><%= row.fname %></td>
+                            
+                            <td><%= row.quantity_don %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+
+
+
+</form>
+
+
+</body>
+</html>

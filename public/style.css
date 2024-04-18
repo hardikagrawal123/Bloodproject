@@ -1,0 +1,118 @@
+/* body{
+    background-color: #ffe6cf;
+   }
+   header{
+    text-align: center;
+    height: 100px;
+    padding-top: 1px;
+    background-color: #ff9933;
+    color: #FFFFFF;
+    font-size: x-large;
+   }
+   h3{
+    margin-top: 2px;
+    text-align: center;
+    background-color: #ffbf80;
+   }
+   form{
+    width: 45%;
+    display: inline-block;
+    margin: 20px;
+   }
+   footer{
+    margin-top: 3%;
+    text-align: center;
+   } */
+ 
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    background-color: #18cd00;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #2d2b2b;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.66);
+    width: 80%;
+    max-width: 600px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="submit"],
+form button[type="submit"] {
+    width: calc(100% - 24px); /* Adjusted width */
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 10px; /* Reduced margin */
+    border: none;
+    border-radius: 5px;
+    font-size: 12px; /* Reduced font size */
+    background-color: #ccc;
+    color: #333;
+}
+
+form input[type="submit"],
+form button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover,
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+form button[type="reset"] {
+    background-color: #ccc;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="reset"]:hover {
+    background-color: #bbb;
+}
+
+.error-message {
+    color: #e53935;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #43a047;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 20px; 
+}
